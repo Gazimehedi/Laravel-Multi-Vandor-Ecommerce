@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('product_opening', function (Blueprint $table) {
             $table->id();
-            $table->integer('quantity')->unique();
+            $table->integer('quantity');
             $table->float('rate');
             $table->timestamps();
         });
@@ -36,6 +36,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->foreignId('product_id')->constrained('product_opening')->onDelete('restrict')->onUpdate('restrict');
             $table->unsignedBigInteger('warehouse_id');
+            $table->integer('quantity');
             $table->timestamps();
             $table->softDeletes();
         });

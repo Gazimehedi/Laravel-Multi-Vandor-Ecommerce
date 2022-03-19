@@ -1,0 +1,107 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    * {
+        box-sizing: border-box;
+    }
+    header {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        >div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            >div {
+                margin: 0 10px;
+                button {
+                    outline: none;
+                    border: 1px solid burlywood;
+                    padding: 5px 10px;
+                    text-transform: capitalize;
+                }
+            }
+            .logo-box {
+                img {
+                    height: 40px;
+                }
+            }
+            .profile-avatar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                img {
+                    border-radius: 100%;
+                    width: 40px;
+                    height: 40px;
+                    -webkit-border-radius: 100%;
+                    -moz-border-radius: 100%;
+                    -ms-border-radius: 100%;
+                    -o-border-radius: 100%;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        ul {
+            margin: 0;
+            padding: 0 5px;
+            list-style-type: none;
+            li {
+                line-height: 2.5rem;
+                border-bottom: 1px solid silver;
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 1.1rem;
+                    line-height: 2.4rem;
+                    display: block;
+                    width: 100%;
+                    height: calc(100% - 2px);
+                }
+                &:hover {
+                    background: aliceblue;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    main {
+        min-height: calc(100vh - 50px);
+        .bardump {
+            list-style: none;
+            font-size: 1.1rem;
+            margin: 0;
+            padding: 0 5px;
+            a {
+                text-decoration: none;
+                text-transform: capitalize;
+            }
+        }
+    }
+    footer {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background: green;
+    }
+}
